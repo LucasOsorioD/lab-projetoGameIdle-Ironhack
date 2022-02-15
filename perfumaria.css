@@ -1,0 +1,72 @@
+
+.inventory{
+    bottom: 0rem;
+    width: 100%;
+    font-size: 20px;
+    padding-top: 1rem;
+    color: white;
+}
+
+.loterica{
+    display: none;
+}
+
+.projetos{
+    display: none;
+}
+.sellButtons{
+    display: grid;
+    grid-template-columns: repeat(3, 15rem);
+}
+
+.sellButtonsBlog{
+    display: grid;
+    grid-template-columns: repeat(3, 25rem);
+}
+
+.upgrades, .items button{
+    display: grid;
+    grid-template-columns: repeat(1, 96px);
+    margin-bottom: 10px;
+}
+
+.upgradesBlog, .items button{
+    display: grid;
+    grid-template-columns: repeat(1, 25rem);
+    margin-bottom: 1rem;
+}
+
+button{
+    background-color: white;
+    font-size: 20px;
+    border-radius: 05%;
+}
+
+.memeWakeUp{
+    position: static;
+    height: 45rem;
+    width: auto;
+    padding-top: 1rem;
+}
+
+.memeRacaNegra{
+    width: auto;
+    padding-top: 1rem;
+}
+
+.conteudo {
+    margin: 5rem;
+    margin-top: 2rem;
+}
+
+.todoFundo {
+    background-color: darkgreen;
+}
+
+.botao {
+    background-color: rgb(211, 211, 6);
+}
+
+.botaoBlog {
+    background-color: rgb(211, 211, 6);
+}
