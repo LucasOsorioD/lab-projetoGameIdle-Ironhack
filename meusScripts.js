@@ -7,6 +7,7 @@
     let entrarEmPiramide = 0;
     let faClube = 0;
     let comprarBotViews = 0;
+    let precocomprarBotViews = 100;
     let precoEntrarPiramide = 100;
     let precoCriarFaClube = 100;
     let precoTiToKwai = 10;
@@ -16,6 +17,7 @@
     setInterval(function () {
         boletos += entrarEmPiramide;
         limite += faClube;
+        views += comprarBotViews
         changeInventory();
         changeMarket();
         projetinhos();
@@ -121,8 +123,8 @@
     });
 
     $("#comprarBotViews").click(function () {
-        views -= precoCriarFaClube;
-        faClube++;
+        views -= precocomprarBotViews;
+        comprarBotViews++;
         changeInventory();
         projetinhos();
     });
@@ -186,6 +188,11 @@
         }else{
             $("#FasSomente").html("");
         }
+        if(comprarBotViews > 0){
+            $("#ComprarBotViews").html("Voce já comprou " + comprarBotViews + " pack(s) de visualizações e likes para seus videos.");
+        }else{
+            $("#ComprarBotViews").html("");
+        }
     };
 
     function changeMarket(){
@@ -238,6 +245,11 @@
             $("#faClube").css("display", "block");
         }else{
             $("#faClube").css("display", "none");
+        }
+        if(limite >= precocomprarBotViews){
+            $("#comprarBotViews").css("display", "block");
+        }else{
+            $("#comprarBotViews").css("display", "none");
         }
     };
 
