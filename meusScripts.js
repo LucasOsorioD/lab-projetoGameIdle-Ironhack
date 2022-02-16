@@ -17,7 +17,7 @@
     setInterval(function () {
         boletos += entrarEmPiramide;
         limite += faClube;
-        views += comprarBotViews
+        views += comprarBotViews;
         changeInventory();
         changeMarket();
         projetinhos();
@@ -123,7 +123,7 @@
     });
 
     $("#comprarBotViews").click(function () {
-        views -= precocomprarBotViews;
+        limite -= precocomprarBotViews;
         comprarBotViews++;
         changeInventory();
         projetinhos();
@@ -166,19 +166,19 @@
         }
 
         if(views > 0){
-            $("#views").html("Voce agora adquiriu " + views + " views em seus posts.");
+            $("#views").html("Voce adquiriu " + views + " views em seus posts.");
         }else{
             $("#views").html("");
         }
 
         if(videos > 0){
-            $("#videos").html("Voce agora possui " + videos + " conta(s) no TiToKwai.");
+            $("#videos").html("Voce possui " + videos + " conta(s) no TiToKwai.");
         }else{
             $("#videos").html("");
         }
 
         if(entrarEmPiramide > 0){
-            $("#piramide").html("Voce agora participa de " + entrarEmPiramide + " piramide(s).");
+            $("#piramide").html("Voce participa de " + entrarEmPiramide + " piramide(s).");
         }else{
             $("#piramide").html("");
         }
