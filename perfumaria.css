@@ -44,9 +44,11 @@ button{
 
 .memeWakeUp{
     position: static;
-    height: 45rem;
+    height: 750px;
     width: auto;
     padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
 }
 
 .memeRacaNegra{

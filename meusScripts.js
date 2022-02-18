@@ -13,6 +13,8 @@
     let precoTiToKwai = 10;
     let boletoPrice = 1;
     let menu;
+    let quantidadeReset = 0;
+    let precoReset = 200;
 
     setInterval(function () {
         boletos += entrarEmPiramide;
@@ -263,5 +265,35 @@
         randomizadorDeMemes[1].src = pollRandom[randomIndex];
         return menu;
     };
+
+    function criarBotao (){
+        let btn = document.createElement("button");
+        btn.innerHTML = "A PF descobriu seus esquemas de sonegação de imposto! Voce precisa fugir, trocar de nome (quem sabe fazer uma cirurgia?), sorte sua que alguns dos seus investimentos com os laranjas permitiram voce a ter parte dos seus rendimentos de volta.";
+        document.getElementsByClassName("memeWakeUp")[0].appendChild(btn)
+        };
+
+    let prestigioReset = setTimeout(criarBotao, 30000);
+
+    //function resetPrestige() {
+    //    boletos = 0;
+    //    views = 0;
+    //    videos = 0;
+    //    limite = 0;
+    //    boletoAdd = 1;
+    //    viewsAdd = 1;
+    //    entrarEmPiramide = entrarEmPiramide / 2;
+    //    faClube = 0 / 2;
+    //    comprarBotViews = 0 / 2;
+    //    precocomprarBotViews = 100;
+    //    precoEntrarPiramide = 100;
+    //    precoCriarFaClube = 100;
+    //    precoTiToKwai = 10;
+    //    boletoPrice = 1;
+    //    menu;
+    //    quantidadeReset = 0;
+    //    precoReset = 200;
+    //}
+    
+    //prestigioReset.addEventListener('click', resetPrestige ()
 
     //console.log(randomizadorDeMemes)
