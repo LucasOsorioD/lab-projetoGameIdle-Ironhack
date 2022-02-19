@@ -16,7 +16,7 @@
     let quantidadeReset = 0;
     let precoReset = 200;
 
-    setInterval(function () {
+    setInterval(function(){
         boletos += entrarEmPiramide;
         limite += faClube;
         views += comprarBotViews;
@@ -27,7 +27,7 @@
 
     //let boletoPendente = document.getElementById("#boletoPendente")
     //boletoPendente.addEventListener('click', function () {...)
-    $("#boletoPendente").click(function () {
+    $("#boletoPendente").click(function(){
         boletos += boletoAdd;
         changeInventory();
         changeMarket();
@@ -35,7 +35,7 @@
 
     //let luxarNasRedes = document.getElementById("#luxarNasRedes")
     //luxarNasRedes.addEventListener('click', function () {...)    
-    $("#luxarNasRedes").click(function () {
+    $("#luxarNasRedes").click(function(){
         if(videos == 0) {
             alert("Voce precisa fazer uma conta no TiToKwai para poder luxar nas Redes Sociais!");
         }else {
@@ -46,7 +46,7 @@
 
     //let projetinhosParalelos = document.getElementById("#projetinhosParalelos")
     //projetinhosParalelos.addEventListener('click', function () {...)      
-    $("#projetinhosParalelos").click(function () {
+    $("#projetinhosParalelos").click(function(){
         if(videos == 0) {
             alert("Voce precisa fazer uma conta no TiToKwai para poder luxar nas Redes Sociais!");
         }else {menu = switchMenu("projetos");
@@ -56,7 +56,7 @@
 
     //let pagar1 = document.getElementById("#pagar1")
     //pagar1.addEventListener('click', function () {...)    
-    $("#pagar1").click(function () {
+    $("#pagar1").click(function(){
         boletos--;
         limite += boletoPrice;
         changeInventory();
@@ -65,7 +65,7 @@
 
     //let pagar10 = document.getElementById("#pagar10")
     //pagar10.addEventListener('click', function () {...)
-    $("#pagar10").click(function () {
+    $("#pagar10").click(function(){
         boletos-=10;
         limite += boletoPrice * 10;
         changeInventory();
@@ -83,7 +83,7 @@
 
     //let pagarAll = document.getElementById("#pagarAll")
     //pagarAll.addEventListener('click', function () {...)
-    $("#recebidos1").click(function () {
+    $("#recebidos1").click(function(){
         views--;
         limite += boletoPrice;
         changeInventory();
@@ -92,7 +92,7 @@
 
     //let pagar10 = document.getElementById("#pagar10")
     //pagar10.addEventListener('click', function () {...)
-    $("#recebidos10").click(function () {
+    $("#recebidos10").click(function(){
         views-=10;
         limite += boletoPrice * 10;
         changeInventory();
@@ -101,7 +101,7 @@
 
     //let pagarAll = document.getElementById("#pagarAll")
     //pagarAll.addEventListener('click', function () {...)
-    $("#recebidosAll").click(function () {
+    $("#recebidosAll").click(function(){
         limite += boletoPrice * views;
         views = 0;
         changeInventory();
@@ -110,21 +110,21 @@
 
     //let entrarEmPiramide = document.getElementById("#entrarEmPiramide")
     //entrarEmPiramide.addEventListener('click', function () {...)
-    $("#entrarEmPiramide").click(function () {
+    $("#entrarEmPiramide").click(function(){
         limite -= precoEntrarPiramide;
         entrarEmPiramide++;
         changeInventory();
         changeMarket();
     });
 
-    $("#faClube").click(function () {
+    $("#faClube").click(function(){
         limite -= precoCriarFaClube;
         faClube++;
         changeInventory();
         projetinhos();
     });
 
-    $("#comprarBotViews").click(function () {
+    $("#comprarBotViews").click(function(){
         limite -= precocomprarBotViews;
         comprarBotViews++;
         changeInventory();
@@ -133,7 +133,7 @@
 
     //let criarContaNoTiToKwai = document.getElementById("#criarContaNoTiToKwai")
     //criarContaNoTiToKwai.addEventListener('click', function () {...)
-    $("#criarContaNoTiToKwai").click(function () {
+    $("#criarContaNoTiToKwai").click(function(){
         limite -= precoTiToKwai;
         videos++;
         changeInventory();
@@ -142,23 +142,23 @@
 
     //let criarContaNoTiToKwai = document.getElementById("#criarContaNoTiToKwai")
     //criarContaNoTiToKwai.addEventListener('click', function () {...)
-    $("#irPagar").click(function () {
+    $("#irPagar").click(function(){
         menu = switchMenu("loterica");
         changeMarket();
     });
 
     //let return = document.getElementById("#return")
     //return.addEventListener('click', function () {...)
-    $("#return").click(function () {
+    $("#return").click(function(){
         menu = switchMenu("main");
     });
 
-    $("#retornar").click(function () {
+    $("#retornar").click(function(){
         menu = switchMenu("main");
     });
 
 
-    function changeInventory () {
+    function changeInventory(){
         $("#limite").html("Crédito no cartão: R$" + limite);
 
         if(boletos == 1){
@@ -194,6 +194,11 @@
             $("#ComprarBotViews").html("Voce já comprou " + comprarBotViews + " pack(s) de visualizações e likes para seus videos.");
         }else{
             $("#ComprarBotViews").html("");
+        }
+        if(quantidadeReset > 0){
+            $("#escapouPF").html("Voce já conseguiu escapar " + quantidadeReset + " vez(es) da Polícia Federal. Parabens?");
+        }else{
+            $("#escapouPF").html("");
         }
     };
 
@@ -267,33 +272,46 @@
     };
 
     function criarBotao (){
+        let container = document.createElement("div");
+        let img = document.createElement("img");
         let btn = document.createElement("button");
+        container.className = "containerReset";
+        img.src = "https://jpimg.com.br/uploads/2017/04/1232546088-capa-meme-senhora.jpg";
+        img.style="height: 100%; width: 640px;";
         btn.innerHTML = "A PF descobriu seus esquemas de sonegação de imposto! Voce precisa fugir para outra cidade, trocar de nome (quem sabe fazer uma cirurgia?), sorte sua que alguns dos seus investimentos com os laranjas permitiram voce a ter parte dos seus rendimentos de volta.";
-        document.getElementsByClassName("memeWakeUp")[0].appendChild(btn)
+        btn.className = "memePrestigio";
+        btn.id = "resetarPrestigio";
+        document.getElementsByClassName("memeWakeUp")[0].appendChild(container);
+        document.getElementsByClassName("containerReset")[0].appendChild(img);
+        document.getElementsByClassName("containerReset")[0].appendChild(btn);
         };
 
     let prestigioReset = setTimeout(criarBotao, 10000);
 
-    //function resetPrestige() {
-    //    boletos = 0;
-    //    views = 0;
-    //    videos = 0;
-    //    limite = 0;
-    //    boletoAdd = 1 + (quantidadeReset+0.01)*0.70;
-    //    viewsAdd = 1 + (quantidadeReset+0.01)*0.70;
-    //    entrarEmPiramide = entrarEmPiramide / 2;
-    //    faClube = faClube / 2;
-    //    comprarBotViews = comprarBotViews / 2;
-    //    precocomprarBotViews = 100;
-    //    precoEntrarPiramide = 100;
-    //    precoCriarFaClube = 100;
-    //    precoTiToKwai = 10;
-    //    boletoPrice = 1;
-    //    menu;
-    //    quantidadeReset = quantidadeReset;
-    //    precoReset = 200 + (quantidadeReset+1)*1.25;
-    //}
-    
-    //prestigioReset.addEventListener('click', resetPrestige ())
+    function resetPrestige() {
+       limite -= precoReset;
+       quantidadeReset++;
+       boletos = 0;
+       views = 0;
+       videos = 0;
+       limite = 0;
+       entrarEmPiramide = entrarEmPiramide / 2;
+       faClube = faClube / 2;
+       comprarBotViews = comprarBotViews / 2;
+       boletoAdd = 1 + (quantidadeReset+0.01)*0.70;
+       viewsAdd = 1 + (quantidadeReset+0.01)*0.70;
+       precocomprarBotViews = 100;
+       precoEntrarPiramide = 100;
+       precoCriarFaClube = 100;
+       precoTiToKwai = 10;
+       boletoPrice = 1;
+       menu;
+       precoReset = 200 + (quantidadeReset+1)*1.25;
+       changeInventory()
+    };
 
-    //console.log(randomizadorDeMemes)
+    // prestigioReset.addEventListener('click', resetPrestige);
+
+    $("#resetarPrestigio").click(function(){
+        resetPrestige()
+    });

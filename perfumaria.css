@@ -51,9 +51,17 @@ button{
     flex-direction: row;
 }
 
-.memeWakeUp .button{
+.containerReset{
+    max-height: 750px;
+    margin-left: 0.3rem;
+}
+
+.memePrestigio{
     border-radius: 0%;
-    background-image: url('https://jpimg.com.br/uploads/2017/04/1232546088-capa-meme-senhora.jpg');
+    width: 640px;
+    position: absolute;
+    top: 43%;
+    left: 36.85%;
 }
 
 .memeRacaNegra{
@@ -62,7 +70,7 @@ button{
 }
 
 .conteudo {
-    margin: 5rem;
+    margin: 3rem;
     margin-top: 2rem;
 }
 
