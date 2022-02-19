@@ -268,32 +268,32 @@
 
     function criarBotao (){
         let btn = document.createElement("button");
-        btn.innerHTML = "A PF descobriu seus esquemas de sonegação de imposto! Voce precisa fugir, trocar de nome (quem sabe fazer uma cirurgia?), sorte sua que alguns dos seus investimentos com os laranjas permitiram voce a ter parte dos seus rendimentos de volta.";
+        btn.innerHTML = "A PF descobriu seus esquemas de sonegação de imposto! Voce precisa fugir para outra cidade, trocar de nome (quem sabe fazer uma cirurgia?), sorte sua que alguns dos seus investimentos com os laranjas permitiram voce a ter parte dos seus rendimentos de volta.";
         document.getElementsByClassName("memeWakeUp")[0].appendChild(btn)
         };
 
-    let prestigioReset = setTimeout(criarBotao, 30000);
+    let prestigioReset = setTimeout(criarBotao, 10000);
 
     //function resetPrestige() {
     //    boletos = 0;
     //    views = 0;
     //    videos = 0;
     //    limite = 0;
-    //    boletoAdd = 1;
-    //    viewsAdd = 1;
+    //    boletoAdd = 1 + (quantidadeReset+0.01)*0.70;
+    //    viewsAdd = 1 + (quantidadeReset+0.01)*0.70;
     //    entrarEmPiramide = entrarEmPiramide / 2;
-    //    faClube = 0 / 2;
-    //    comprarBotViews = 0 / 2;
+    //    faClube = faClube / 2;
+    //    comprarBotViews = comprarBotViews / 2;
     //    precocomprarBotViews = 100;
     //    precoEntrarPiramide = 100;
     //    precoCriarFaClube = 100;
     //    precoTiToKwai = 10;
     //    boletoPrice = 1;
     //    menu;
-    //    quantidadeReset = 0;
-    //    precoReset = 200;
+    //    quantidadeReset = quantidadeReset;
+    //    precoReset = 200 + (quantidadeReset+1)*1.25;
     //}
     
-    //prestigioReset.addEventListener('click', resetPrestige ()
+    //prestigioReset.addEventListener('click', resetPrestige ())
 
     //console.log(randomizadorDeMemes)
