@@ -7,14 +7,14 @@
     let entrarEmPiramide = 0;
     let faClube = 0;
     let comprarBotViews = 0;
-    let precocomprarBotViews = 100;
-    let precoEntrarPiramide = 100;
-    let precoCriarFaClube = 100;
+    let precocomprarBotViews = 50;
+    let precoEntrarPiramide = 50;
+    let precoCriarFaClube = 50;
     let precoTiToKwai = 10;
     let boletoPrice = 1;
     let menu;
     let quantidadeReset = 0;
-    let precoReset = 200;
+    let precoReset = 100;
 
     setInterval(function(){
         boletos += entrarEmPiramide;
@@ -53,6 +53,7 @@
         projetinhos();
     };       
     });
+
 
     //let pagar1 = document.getElementById("#pagar1")
     //pagar1.addEventListener('click', function () {...)    
@@ -190,15 +191,23 @@
         }else{
             $("#FasSomente").html("");
         }
+
         if(comprarBotViews > 0){
             $("#ComprarBotViews").html("Voce já comprou " + comprarBotViews + " pack(s) de visualizações e likes para seus videos.");
         }else{
             $("#ComprarBotViews").html("");
         }
+
         if(quantidadeReset > 0){
             $("#escapouPF").html("Voce já conseguiu escapar " + quantidadeReset + " vez(es) da Polícia Federal. Parabens?");
         }else{
             $("#escapouPF").html("");
+        }
+
+        if(limite > precoReset){
+            $("#ocultoDiv").css("display", "block");
+        }else{
+            $("#ocultoDiv").css("display", "none");
         }
     };
 
@@ -275,6 +284,7 @@
         let container = document.createElement("div");
         let img = document.createElement("img");
         let btn = document.createElement("button");
+        container.id = "ocultoDiv";
         container.className = "containerReset";
         img.src = "https://jpimg.com.br/uploads/2017/04/1232546088-capa-meme-senhora.jpg";
         img.style="height: 100%; width: 640px;";
@@ -285,33 +295,39 @@
         document.getElementsByClassName("containerReset")[0].appendChild(img);
         document.getElementsByClassName("containerReset")[0].appendChild(btn);
         };
-
-    let prestigioReset = setTimeout(criarBotao, 10000);
+        criarBotao()
 
     function resetPrestige() {
-       limite -= precoReset;
-       quantidadeReset++;
        boletos = 0;
        views = 0;
        videos = 0;
        limite = 0;
-       entrarEmPiramide = entrarEmPiramide / 2;
-       faClube = faClube / 2;
-       comprarBotViews = comprarBotViews / 2;
-       boletoAdd = 1 + (quantidadeReset+0.01)*0.70;
-       viewsAdd = 1 + (quantidadeReset+0.01)*0.70;
-       precocomprarBotViews = 100;
-       precoEntrarPiramide = 100;
-       precoCriarFaClube = 100;
+       entrarEmPiramide = Math.floor(entrarEmPiramide / 2);
+       faClube = Math.floor(faClube / 2);
+       comprarBotViews = Math.floor(comprarBotViews / 2);
+       boletoAdd = Math.round(1 + (quantidadeReset+0.01)*0.70);
+       viewsAdd = Math.round(1 + (quantidadeReset+0.01)*0.70);
+       precocomprarBotViews = 50;
+       precoEntrarPiramide = 50;
+       precoCriarFaClube = 50;
        precoTiToKwai = 10;
        boletoPrice = 1;
        menu;
-       precoReset = 200 + (quantidadeReset+1)*1.25;
-       changeInventory()
+       precoReset = Math.floor(100 + (quantidadeReset)*1.25);
+       console.log('o preco do reset está', precoReset);
+       console.log('a quantidade de boletos por click está', boletoAdd);
+       console.log('a quantidade de views por click está', viewsAdd);
+       changeInventory();
     };
 
-    // prestigioReset.addEventListener('click', resetPrestige);
-
+    //let resetarPrestigio = document.getElementById("#resetarPrestigio")
+    //resetarPrestigio.addEventListener('click', function () {...)
     $("#resetarPrestigio").click(function(){
-        resetPrestige()
+        if(limite < precoReset) {
+            alert("Senhor(@)? Senhor(@)! Senhor(@)! Por que ta correndo? A PF só quer conversar contigo.")
+        }else { 
+        limite -= precoReset;
+        quantidadeReset++;
+        resetPrestige();
+        };
     });
