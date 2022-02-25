@@ -25,6 +25,10 @@
         projetinhos();
     }, 30000);
 
+    setInterval(function(){
+        memeReset();
+    }, 1);
+
     //let boletoPendente = document.getElementById("#boletoPendente")
     //boletoPendente.addEventListener('click', function () {...)
     $("#boletoPendente").click(function(){
@@ -203,7 +207,9 @@
         }else{
             $("#escapouPF").html("");
         }
+    };
 
+    function memeReset (){
         if(limite > precoReset){
             $("#ocultoDiv").css("display", "block");
         }else{
@@ -273,7 +279,7 @@
         $(".menus").children().css("display", "none");
         $("." + menu).css("display", "block");
         let randomizadorDeMemes = document.getElementsByClassName ('memeRandom');
-        let pollRandom = ["https://scontent.fcgh9-1.fna.fbcdn.net/v/t1.6435-9/100087908_1420684734784727_7576697995228348416_n.png?_nc_cat=106&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeFr1TldK0jWKJ1UtAO1FSavwDi4BD5kM1HAOLgEPmQzUbmxq9ocAwG9lOY0rAWRxjk&_nc_ohc=42fRynlbm4MAX8dYTrX&_nc_ht=scontent.fcgh9-1.fna&oh=00_AT9Eyq5XURf1mO9An5ieBpuvv0Awihbz7xL6cG44Z93Enw&oe=6227C9D5", "https://extra.globo.com/incoming/19285348-23f-d8f/w448/lasier-colagem.jpg", "https://pbs.twimg.com/media/ENtAzzLW4AECMoW.jpg", "http://2.bp.blogspot.com/-XvLX8lOQ60w/VE_UORSUe2I/AAAAAAAAm0I/0qVREPt8rew/s1600/segura%2Bo%2Bforninho%2Beita%2Bgiovanna%2B(10).jpg", "https://i.kym-cdn.com/entries/icons/mobile/000/015/994/enhanced-28984-1404855514-25.jpg", "https://i.redd.it/ii49iayktzt01.jpg", "https://gcmais.com.br/wp-content/uploads/2022/01/Gravida.jpg", "https://i.pinimg.com/originals/49/28/ca/4928cab448f675e55e1a54702adf02d7.jpg", "https://i0.wp.com/gay.blog.br/wp-content/uploads/2018/03/bons-drinks.jpg?fit=600%2C419&ssl=1", "https://pbs.twimg.com/media/C5SB3uPW8AQ0FY6.jpg", "https://hqscomcafe.com.br/wp-content/uploads/2021/02/Et-Bilu-Busquem-conhecimento.jpg", "https://teleguiado.com/wp-content/uploads/2021/10/Captura-de-Tela-2021-10-09-a%CC%80s-02.52.59.png"]
+        let pollRandom = ["https://scontent.fcgh9-1.fna.fbcdn.net/v/t1.6435-9/100087908_1420684734784727_7576697995228348416_n.png?_nc_cat=106&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeFr1TldK0jWKJ1UtAO1FSavwDi4BD5kM1HAOLgEPmQzUbmxq9ocAwG9lOY0rAWRxjk&_nc_ohc=42fRynlbm4MAX8dYTrX&_nc_ht=scontent.fcgh9-1.fna&oh=00_AT9Eyq5XURf1mO9An5ieBpuvv0Awihbz7xL6cG44Z93Enw&oe=6227C9D5", "https://aventurasnahistoria.uol.com.br/media/_versions/brasil/padre_do_balao_widelg.jpg", "https://upload.wikimedia.org/wikipedia/pt/8/8d/Jailson_Mendes.jpg", "https://mega.ibxk.com.br//2013/3/megacurioso/super-imagem/superimagem-megacurioso-434607962004774194.jpg?ims=720x480", "https://extra.globo.com/incoming/19285348-23f-d8f/w448/lasier-colagem.jpg", "https://pbs.twimg.com/media/ENtAzzLW4AECMoW.jpg", "http://2.bp.blogspot.com/-XvLX8lOQ60w/VE_UORSUe2I/AAAAAAAAm0I/0qVREPt8rew/s1600/segura%2Bo%2Bforninho%2Beita%2Bgiovanna%2B(10).jpg", "https://i.kym-cdn.com/entries/icons/mobile/000/015/994/enhanced-28984-1404855514-25.jpg", "https://i.redd.it/ii49iayktzt01.jpg", "https://gcmais.com.br/wp-content/uploads/2022/01/Gravida.jpg", "https://i.pinimg.com/originals/49/28/ca/4928cab448f675e55e1a54702adf02d7.jpg", "https://i0.wp.com/gay.blog.br/wp-content/uploads/2018/03/bons-drinks.jpg?fit=600%2C419&ssl=1", "https://pbs.twimg.com/media/C5SB3uPW8AQ0FY6.jpg", "https://hqscomcafe.com.br/wp-content/uploads/2021/02/Et-Bilu-Busquem-conhecimento.jpg", "https://teleguiado.com/wp-content/uploads/2021/10/Captura-de-Tela-2021-10-09-a%CC%80s-02.52.59.png"]
         let randomIndex = Math.floor(Math.random() * pollRandom.length);
         randomizadorDeMemes[0].src = pollRandom[randomIndex];
         randomizadorDeMemes[1].src = pollRandom[randomIndex];
@@ -282,17 +288,17 @@
 
     function criarBotao (){
         let container = document.createElement("div");
-        let img = document.createElement("img");
         let btn = document.createElement("button");
+        let btnTexto = document.createElement("button");
         container.id = "ocultoDiv";
         container.className = "containerReset";
-        img.src = "https://jpimg.com.br/uploads/2017/04/1232546088-capa-meme-senhora.jpg";
-        img.style="height: 100%; width: 640px;";
-        btn.innerHTML = "A PF descobriu seus esquemas de sonegação de imposto! Voce precisa fugir para outra cidade, trocar de nome (quem sabe fazer uma cirurgia?), sorte sua que alguns dos seus investimentos com os laranjas permitiram voce a ter parte dos seus rendimentos de volta.";
+        btnTexto.className = "textoMemePrestigio";
+        btnTexto.innerHTML = "Pensou que a PF não iria descobrir seus esquemas de sonegação de imposto? Voce precisa fugir para outra cidade, trocar de nome (quem sabe fazer uma cirurgia?), sorte sua que alguns dos seus investimentos com os laranjas permitiram voce a ter parte dos seus 'rendimentos' de volta.";
+        btn.innerHTML = `Clique aqui para pagar propina de no mínimo ${precoReset} reais para fugir da PF.`
         btn.className = "memePrestigio";
         btn.id = "resetarPrestigio";
         document.getElementsByClassName("memeWakeUp")[0].appendChild(container);
-        document.getElementsByClassName("containerReset")[0].appendChild(img);
+        document.getElementsByClassName("containerReset")[0].appendChild(btnTexto);
         document.getElementsByClassName("containerReset")[0].appendChild(btn);
         };
         criarBotao()

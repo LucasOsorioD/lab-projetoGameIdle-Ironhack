@@ -1,10 +1,14 @@
 
 .inventory{
     bottom: 0rem;
-    width: 100%;
+    width: 484px;
     font-size: 20px;
-    padding-top: 1rem;
+    padding-top: 0.15rem;
+    padding-left: 0.75rem;
+    margin-left: 0.25rem;
     color: white;
+    border: 0.15rem solid black;
+    align-self: center;
 }
 
 .loterica{
@@ -44,24 +48,38 @@ button{
 
 .memeWakeUp{
     position: static;
-    height: 750px;
-    width: auto;
     padding-top: 1rem;
     display: flex;
     flex-direction: row;
 }
 
 .containerReset{
-    max-height: 750px;
     margin-left: 0.3rem;
+    width: 600px;
+    display: flex;
+    background-image: url("https://jpimg.com.br/uploads/2017/04/1232546088-capa-meme-senhora.jpg");
+    background-repeat: no-repeat;
+    background-size: 600px 700px;
+    color: black;
+    font-size: 20px;
+}
+
+.textoMemePrestigio{
+    border-radius: 0%;
+    width: 600px;
+    top: 380px;
+    left: 661px;
+    font-size: 17px;
+    position: absolute;
 }
 
 .memePrestigio{
     border-radius: 0%;
-    width: 640px;
+    width: 600px;
     position: absolute;
-    top: 43%;
-    left: 36.85%;
+    top: 758px;
+    left: 661px;
+    font-size: 15px;
 }
 
 .memeRacaNegra{
@@ -72,6 +90,8 @@ button{
 .conteudo {
     margin: 3rem;
     margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
 }
 
 .todoFundo {
@@ -84,4 +104,12 @@ button{
 
 .botaoBlog {
     background-color: rgb(211, 211, 6);
+}
+
+.main{
+    width: auto;
+}
+
+.memeRandom{
+    width: 1000px;
 }
